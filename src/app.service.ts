@@ -10,4 +10,8 @@ export class AppService {
   getConfig(): string {
     return getConfig();
   }
+  
+  getConfig() {
+    return getConfig()
+  }
 }

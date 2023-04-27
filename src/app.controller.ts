@@ -17,4 +17,9 @@ export class AppController {
   getConfig(): string {
     return this.appService.getConfig();
   }
+  
+  @Get("config")
+  getConfig() {
+    return this.appService.getConfig()
+  }
 }
