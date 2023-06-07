@@ -1,0 +1,4 @@
+CONF:
+  Env: 'dev'
+PORT: 8080
+PREFIX: 'api'

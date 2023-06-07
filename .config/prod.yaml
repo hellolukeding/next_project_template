@@ -1,0 +1,4 @@
+CONF:
+  Env: 'prod'
+PORT: 8080
+PREFIX: 'api'
