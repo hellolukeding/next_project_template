@@ -8,6 +8,7 @@ import { AppModule } from './app.module';
 import { AllExceptionsFilter } from './common/exceptions/base.exceptions.filter';
 import { TransformInterceptor } from './common/interceptors/transform.interceptors';
 import { IS_DEV, getConfig } from './utils/getConfig';
+import fmp = require('fastify-multipart');
 
 export const config = getConfig();
 export const PORT = config.PORT || 8080;
@@ -38,11 +39,13 @@ export const bootstrap = async () => {
     type: VersioningType.URI,
   });
 
+  //
+  app.register(fmp);
   // 给请求添加prefix
   app.setGlobalPrefix(PREFIX);
   await app.listen(PORT, () => {
     logger.log(
-      `服务已经启动,接口请访问:http://wwww.localhost:${PORT}/${PREFIX}`,
+      `服务已经启动,接口请访问:http://wwww.localhost:${PORT}/${PREFIX}/v1`,
     );
   });
 };
